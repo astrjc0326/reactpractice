@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+
+
+
+</head>
+    <div class="container">
+      <h1 class="display-3">FAQ</h1>
+      <div class="accordion" id="FAQ">
+
+        <!--1 //create root div with an id  -->
+        <h1>    These are FAQ!</h1>
+        <div class='row' id="root">
+
+        </div>
+    </div>
+    </div>
+
+
+
+
+
+
+
+
+<script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<script type="text/babel"> // 3 babel here
+
+const FAQComponent = ({id, collapse, title, content}) => {
+  return(
+  <div class="accordion-item">
+    <h2 class="accordion-header" id={id}>
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target={`#${collapse}`}aria-expanded="true" aria-controls={collapse}>
+        <p class="text-primary">{title}</p>
+      </button>
+    </h2>
+    <div id={collapse} class="accordion-collapse collapse" aria-labelledby={id} data-bs-parent="#FAQ
+  ">
+      <div class="accordion-body ">
+      {content}
+      </div>
+    </div>
+    </div>
+  )
+}
+
+
+let root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<> <FAQComponent id='headingOne' collapse='collapseOne' title="01. I don't remember my password" content=" If you don't remember your password. You can click at the 'I forget my password' 'button at the login modal. We will require you to provide your email and you a reset password link that you can reset your password."/>
+<FAQComponent id='headingTwo' collapse='collapseTwo' title='02. How can I create account at your site?' content="ijeu dkjfeuv djdif hejnv pei a udn uvnbq dsudn fuekfn eij juenj ivzij jisfjk sj efjie fiejkl jcxk jelksmfe."/>
+<FAQComponent id='headingThree' collapse='collapseThree' title='03. What are your delivery hours?' content="If you don't remember your password. You can click at the 'I forget my password' button at the login modal. We will require you to provide your email and you a reset password link that you can reset your password."/>
+<FAQComponent id='headingFour' collapse='collapseFour' title='04. How much time it takes to deliver the order?' content='ejijeu  jeifj  ejifjek jekf ie ajefkjls k lekfkjelo'/>
+<FAQComponent id='headingFive' collapse='collapseFive' title='05. What if I do not like the product?' content='You can press the return button and ship the item back with the label printed and stick it on the package and ship it back to us.'/>
+
+</>);
+</script>
+
+
+</body>
+</html>
+
